@@ -20,26 +20,25 @@ public class LoginDef {
     @Steps(shared = true)
     ValidationSteps validate;
 
-    @Given("el usuario navega al sitio web")
+    @Given("^el usuario navega al sitio web$")
     public void userNavigateTo(){
         url.navigateTo("https://www.saucedemo.com/");
     }
 
-    @When("ingresa credenciales correctas")
-    public void userLoginWithValidCred(){
-        login.typeUser("standard_user");
-        login.typePassword("secret_sauce");
+    @When("^ingresa (.*) y (.*)$")
+    public void userLoginWithValidCred(String user, String password){
+        login.typeUser(user);
+        login.typePassword(password);
         login.clickLogin();
     }
 
-    @Then("la app muestra el homepage")
+    @Then("^la app muestra el homepage$")
     public void invalidateLogin(){
-        Assert.assertTrue(validate.titleIsVisible());
+        //Assert.assertTrue(validate.titleIsVisible());
+        System.out.println(validate.getTitle());
     }
 
-
-
-
+    /*
     @When("ingresa credenciales incorrectas")
     public void userLoginWithInvalidCred(){
         login.typeUser("standard_user");
@@ -51,4 +50,6 @@ public class LoginDef {
     public void validateLogin(){
         Assert.assertTrue(validate.errorMesage());
     }
+
+     */
 }

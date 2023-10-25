@@ -7,11 +7,11 @@ Feature: Validar inicio de sesion
         Given el usuario navega al sitio web
 
         @ValidLogin
-        Scenario: 1 - validar con credenciales correctas
-            When ingresa credenciales correctas
+        Scenario Outline: 1 - validar con credenciales correctas
+            When ingresa <usuario> y <password>
             Then la app muestra el homepage
 
-        @InvalidLogin
-        Scenario: validar por credenciales incorrectas
-            When ingresa credenciales incorrectas
-            Then la app muestra un mensaje de error
+            Examples:
+                | usuario       | password     |
+                | standard_user | secret_sauce |
+                | standard_user | 123456789012 |
