@@ -1,6 +1,4 @@
 package com.swag.ar;
-
-
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
@@ -11,5 +9,5 @@ import org.junit.runner.RunWith;
         glue = "com.swag.ar.definitions",
         tags = "@Login"
 )
-public class Runner {
-}
+
+public class Runner { }

@@ -1,5 +1,4 @@
 package com.swag.ar.definitions;
-
 import com.swag.ar.steps.login.LoginSteps;
 import com.swag.ar.steps.validations.ValidationSteps;
 import com.swag.ar.utilities.website.WebSite;
